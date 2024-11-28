@@ -38,7 +38,8 @@
                 android:id="@+id/editTextQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
-                android:gravity="start" />
+                android:gravity="start"
+                android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
