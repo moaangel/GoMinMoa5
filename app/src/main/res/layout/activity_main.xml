@@ -35,7 +35,7 @@
                 android:id="@+id/FBook"
                 android:layout_width="150dp"
                 android:layout_height="220dp"
-                app:srcCompat="@drawable/bluebook" />
+                tools:srcCompat="@drawable/bluebook" />
 
             <TextView
                 android:id="@+id/textView"
@@ -55,7 +55,7 @@
                 android:id="@+id/TBook"
                 android:layout_width="150dp"
                 android:layout_height="220dp"
-                app:srcCompat="@drawable/redbook" />
+                tools:srcCompat="@drawable/redbook" />
 
             <TextView
                 android:id="@+id/textView2"

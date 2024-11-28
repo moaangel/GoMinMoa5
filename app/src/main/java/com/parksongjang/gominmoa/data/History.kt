@@ -20,7 +20,7 @@ object HistoryManager {
     }
 
     // History 리스트 가져오기
-    fun getHistoryList(): List<History> {
+    fun getHistoryList(): MutableList<History> {
         return historyList
     }
 
