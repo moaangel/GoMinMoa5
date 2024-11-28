@@ -1,7 +1,12 @@
 package com.parksongjang.gominmoa
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
@@ -28,25 +33,39 @@ class QuestionActivity : AppCompatActivity() {
         // 초기화
         val editTextQuestion = findViewById<EditText>(R.id.editTextQuestion)
         val buttonInput = findViewById<ImageView>(R.id.buttonInput)
+        val loadingLayout = View.inflate(this, R.layout.send_animation, null)
+
 
         // 입력 버튼 클릭시 동작 (입력칸 공백이면 메세지 출력)
-        buttonInput.setOnClickListener{
-            if(editTextQuestion.text.toString() == ""){
+        buttonInput.setOnClickListener {
+            if (editTextQuestion.text.toString().isEmpty()) {
                 showNoInputAlert()
-            } else{
-                val advice = when(book){
-                    BookCategory.FBOOK -> FBookList.getFBooks().random().advice
-                    BookCategory.TBOOK -> TBookList.getTBooks().random().advice
-                }
-                HistoryManager.addHistory(type = book, question = editTextQuestion.text.toString(), advice = advice)
-                val intent = Intent(applicationContext, AdviceActivity::class.java)
-                intent.putExtra("type", when(book){
-                    BookCategory.FBOOK -> "위로의 조언"
-                    BookCategory.TBOOK -> "따끔한 조언"
-                })
-                intent.putExtra("question", editTextQuestion.text.toString())
-                intent.putExtra("advice", advice)
-                startActivity(intent)
+            } else {
+                // 로딩 화면 표시
+                setContentView(loadingLayout)
+
+                // 2초 후에 AdviceActivity로 전환
+                Handler(Looper.getMainLooper()).postDelayed({
+                    val advice = when (book) {
+                        BookCategory.FBOOK -> FBookList.getFBooks().random().advice
+                        BookCategory.TBOOK -> TBookList.getTBooks().random().advice
+                    }
+                    HistoryManager.addHistory(
+                        type = book,
+                        question = editTextQuestion.text.toString(),
+                        advice = advice
+                    )
+                    val intent = Intent(applicationContext, AdviceActivity::class.java).apply {
+                        putExtra("type", when (book) {
+                            BookCategory.FBOOK -> "위로의 조언"
+                            BookCategory.TBOOK -> "따끔한 조언"
+                        })
+                        putExtra("question", editTextQuestion.text.toString())
+                        putExtra("advice", advice)
+                    }
+                    startActivity(intent)
+                    finish() // 현재 Activity 종료
+                }, 3000) // 2초 후 실행
             }
         }
     }
