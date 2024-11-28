@@ -1,20 +1,28 @@
 package com.parksongjang.gominmoa
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val buttonFBook = findViewById<Button>(R.id.buttonFBook)
+        val buttonTBook = findViewById<Button>(R.id.buttonTBook)
+
+        buttonFBook.setOnClickListener{
+            val intent = Intent(applicationContext, QuestionActivity::class.java)
+            intent.putExtra("Book", 0)
+            startActivity(intent)
+        }
+
+        buttonTBook.setOnClickListener{
+            val intent = Intent(applicationContext, QuestionActivity::class.java)
+            intent.putExtra("Book", 1)
+            startActivity(intent)
         }
     }
 }
