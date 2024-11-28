@@ -2,8 +2,8 @@ package com.parksongjang.gominmoa
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.parksongjang.gominmoa.data.FBookList
@@ -27,7 +27,7 @@ class QuestionActivity : AppCompatActivity() {
 
         // 초기화
         val editTextQuestion = findViewById<EditText>(R.id.editTextQuestion)
-        val buttonInput = findViewById<Button>(R.id.buttonInput)
+        val buttonInput = findViewById<ImageView>(R.id.buttonInput)
 
         // 입력 버튼 클릭시 동작 (입력칸 공백이면 메세지 출력)
         buttonInput.setOnClickListener{

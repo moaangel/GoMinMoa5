@@ -2,7 +2,7 @@ package com.parksongjang.gominmoa
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -18,8 +18,8 @@ class AdviceActivity : AppCompatActivity() {
 
         // 초기화
         val textViewAdvice = findViewById<TextView>(R.id.textViewAdvice)
-        val buttonList = findViewById<Button>(R.id.buttonList)
-        val buttonShare = findViewById<Button>(R.id.buttonShare)
+        val buttonList = findViewById<ImageView>(R.id.buttonList)
+        val buttonShare = findViewById<ImageView>(R.id.buttonShare)
 
         // advice 화면에 띄워주기
         textViewAdvice.text = advice
