@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.parksongjang.gominmoa.data.History
+import com.parksongjang.gominmoa.enum.BookCategory
 import com.parksongjang.gominmoa.history_recycler_view.HistoryAdapter
 import java.time.LocalDate
 
@@ -31,7 +32,7 @@ class HistoryActivity : AppCompatActivity() {
 
         val data = mutableListOf<History>()
         for(i in 1..9)
-            data.add(History("Question $i", "Advice $i", LocalDate.now()))
+            data.add(History(BookCategory.TBOOK, "Question $i", "Advice $i", LocalDate.now()))
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
