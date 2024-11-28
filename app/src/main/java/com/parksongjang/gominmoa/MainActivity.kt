@@ -19,17 +19,19 @@ class MainActivity : AppCompatActivity() {
         val historybutton : TextView = findViewById(R.id.historybutton)
 
         FBook.setOnClickListener {
-            val intent = Intent(this@MainActivity, ::class.java)
+            val intent = Intent(this@MainActivity, QuestionActivity::class.java)
+            intent.putExtra("Book", 0)
             startActivity(intent)
         }
 
         TBook.setOnClickListener {
-            val intent = Intent(this@MainActivity, ::class.java)
+            val intent = Intent(this@MainActivity, QuestionActivity::class.java)
+            intent.putExtra("Book", 1)
             startActivity(intent)
         }
 
         historybutton.setOnClickListener {
-            val intent = Intent(this@MainActivity, ::class.java)
+            val intent = Intent(this@MainActivity, HistoryActivity::class.java)
             startActivity(intent)        }
     }
 }
