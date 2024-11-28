@@ -1,5 +1,6 @@
 package com.parksongjang.gominmoa
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.parksongjang.gominmoa.data.History
+import com.parksongjang.gominmoa.data.HistoryManager
 import com.parksongjang.gominmoa.enum.BookCategory
 import com.parksongjang.gominmoa.history_recycler_view.HistoryAdapter
 import java.time.LocalDate
@@ -30,9 +32,7 @@ class HistoryActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val data = mutableListOf<History>()
-        for(i in 1..9)
-            data.add(History(BookCategory.TBOOK, "Question $i", "Advice $i", LocalDate.now()))
+        val data = HistoryManager.getHistoryList()
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
@@ -41,7 +41,8 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-
+        val intent = Intent(this@HistoryActivity, MainActivity::class.java)
+        startActivity(intent)
         return super.onSupportNavigateUp()
     }
 }
