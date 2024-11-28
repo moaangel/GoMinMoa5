@@ -1,5 +1,6 @@
 package com.parksongjang.gominmoa
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -40,7 +41,8 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-
+        val intent = Intent(this@HistoryActivity, MainActivity::class.java)
+        startActivity(intent)
         return super.onSupportNavigateUp()
     }
 }
