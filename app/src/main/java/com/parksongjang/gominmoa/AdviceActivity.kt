@@ -27,9 +27,21 @@ class AdviceActivity : AppCompatActivity() {
         // 공유하기 버튼
         buttonShare.setOnClickListener{
             val chooserTitle = "친구에게 공유하기"
+            val formattedText = """
+🌟 오늘의 고민 🌟
+
+[ 선택한 조언 📌 ]  
+$type
+
+[ 고민 🤔 ]  
+$question
+
+[ 오늘의 메시지 💬 ]  
+$advice
+""".trimIndent()
             val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
             intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, "오늘의 고민\n선택한 조언 : $type \n고민 : $question \n조언 : $advice")
+            intent.putExtra(Intent.EXTRA_TEXT, formattedText)
             startActivity(Intent.createChooser(intent, chooserTitle))
         }
 
