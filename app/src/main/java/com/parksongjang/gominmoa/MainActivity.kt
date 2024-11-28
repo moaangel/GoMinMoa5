@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, QuestionActivity::class.java)
                 intent.putExtra("Book", 0)
                 startActivity(intent)
-            }, 1500) // 1500ms = 1.5초
+            }, 1500) //
         }
 
         TBook.setOnClickListener {
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, QuestionActivity::class.java)
                 intent.putExtra("Book", 1)
                 startActivity(intent)
-            }, 1500) // 1500ms = 1.5초
+            }, 1500) //
         }
         historybutton.setOnClickListener {
             val intent = Intent(this@MainActivity, HistoryActivity::class.java)
