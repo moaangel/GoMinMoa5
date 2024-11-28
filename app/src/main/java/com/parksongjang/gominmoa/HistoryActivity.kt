@@ -26,11 +26,7 @@ class HistoryActivity : AppCompatActivity() {
             insets
         }
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val data = HistoryManager.getHistoryList()
 
@@ -38,11 +34,5 @@ class HistoryActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         val adapter = HistoryAdapter(data)
         recyclerView.adapter = adapter
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val intent = Intent(this@HistoryActivity, MainActivity::class.java)
-        startActivity(intent)
-        return super.onSupportNavigateUp()
     }
 }

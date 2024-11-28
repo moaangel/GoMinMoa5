@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".MainActivity"
-    android:background="@drawable/tarot"
-    >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="당신의 선택은 ?"
-        android:textSize="24sp" />
+    android:padding="60dp"
+    android:background="@drawable/bg3"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="472dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:gravity="center_horizontal"
+            android:text="마법의 고민해결 앱"
+            android:textColor="#ececec"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="60dp"/>
 
-            <ImageView
-                android:id="@+id/FBook"
-                android:layout_width="150dp"
-                android:layout_height="220dp"
-                tools:srcCompat="@drawable/bluebook" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="위로의 한마디" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_marginBottom="100dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="160dp"
+            android:maxHeight="160dp"
+            android:src="@drawable/ramadan" />
 
-            <ImageView
-                android:id="@+id/TBook"
-                android:layout_width="150dp"
-                android:layout_height="220dp"
-                tools:srcCompat="@drawable/redbook" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="따끔한 한마디" />
-        </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/historybutton"
+
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="내 고민 모아보기" />
+        android:layout_alignParentBottom="true">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/FBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/button_main_2"
+            android:layout_marginBottom="20dp"/>
+
+        <ImageView
+            android:id="@+id/TBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/button_main_1"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/historybutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#ececec"
+            android:text="내 고민 모아보기" />
+
+    </LinearLayout>
+</RelativeLayout>
