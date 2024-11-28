@@ -32,5 +32,10 @@ class AdviceActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_TEXT, "오늘의 고민\n선택한 조언 : $type \n고민 : $question \n조언 : $advice")
             startActivity(Intent.createChooser(intent, chooserTitle))
         }
+
+        buttonList.setOnClickListener{
+            val intent = Intent(applicationContext, HistoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
