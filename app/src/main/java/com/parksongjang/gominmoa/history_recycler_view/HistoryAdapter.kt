@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.parksongjang.gominmoa.R
 import com.parksongjang.gominmoa.data.History
+import com.parksongjang.gominmoa.enum.BookCategory
 import java.time.format.DateTimeFormatter
 
 class HistoryAdapter(val data: MutableList<History>): Adapter<HistoryViewHolder>() {
@@ -21,7 +22,7 @@ class HistoryAdapter(val data: MutableList<History>): Adapter<HistoryViewHolder>
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         holder.view.findViewById<TextView>(R.id.question_textview).text = data[position].question
         holder.view.findViewById<TextView>(R.id.answer_textview).text = data[position].advice
-        holder.view.findViewById<TextView>(R.id.book_textview).text = data[position].advice
+        holder.view.findViewById<TextView>(R.id.book_textview).text = if(data[position].type == BookCategory.TBOOK) "따끔한 한마디" else "위로의 한마디"
         holder.view.findViewById<TextView>(R.id.date_textview).text = data[position].date.format(
             DateTimeFormatter.ofPattern("yyyy-MM-dd"))
         holder.view.findViewById<ImageView>(R.id.delete_button).setOnClickListener {
