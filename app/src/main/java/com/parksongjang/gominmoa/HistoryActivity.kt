@@ -2,6 +2,7 @@ package com.parksongjang.gominmoa
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -27,6 +28,7 @@ class HistoryActivity : AppCompatActivity() {
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val homeButton = findViewById<ImageView>(R.id.home_button)
 
         val data = HistoryManager.getHistoryList()
 
@@ -34,5 +36,10 @@ class HistoryActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         val adapter = HistoryAdapter(data)
         recyclerView.adapter = adapter
+
+        homeButton.setOnClickListener {
+            val intent = Intent(this@HistoryActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
