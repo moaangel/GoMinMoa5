@@ -4,27 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginTop="40dp"
+        android:text="당신의 선택은 ?"
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/buttonFBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="FBook" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="472dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonTBook"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/FBook"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                app:src="@drawable/bluebook.jpg"
+                tools:srcCompat="@drawable/bluebook" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위로의 한마디" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/TBook"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                tools:srcCompat="@drawable/redbook" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="따끔한 한마디" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/historybutton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TBook" />
+        android:text="내 고민 모아보기" />
 
 </LinearLayout>
