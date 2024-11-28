@@ -17,30 +17,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="우리 프로젝트가 성공할 수 있을까요?"
-            android:textSize="32sp"
-            android:textStyle="bold"/>
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#ececec"/>
 
         <TextView
             android:id="@+id/answer_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="욕심을 버려라"
-            android:textSize="28sp" />
+            android:textSize="20sp"
+            android:textColor="#ececec"/>
 
         <TextView
             android:id="@+id/book_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="- T 고민해결책"
-            android:textSize="24sp"
-            android:layout_gravity="bottom"/>
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:textColor="#ececec"/>
 
         <TextView
             android:id="@+id/date_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2024-11-28"
-            android:textSize="20sp" />
+            android:textSize="12sp"
+            android:textColor="#ececec"/>
     </LinearLayout>
 
     <LinearLayout
@@ -52,8 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="DelteButton"
-            android:maxWidth="48dp"
-            android:maxHeight="48dp"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
             android:adjustViewBounds="true"
             android:src="@drawable/delete"
             android:layout_gravity="center"/>
